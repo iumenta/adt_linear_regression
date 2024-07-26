@@ -1,0 +1,56 @@
+# This file should contain basic component information for your component.
+component-name: ADT component for linking sources
+component-author: Jascha Grubel, Kristina Vodorezova
+component-version: v0.1.2
+component-repository: https://github.com/vodor001/adt_link_sources.git
+component-license: BSD-3 license
+component-type: ephemeral
+component-description: Loading the data and making preprocessing
+tags:
+  - energy_expenditure
+  - iot_sensors
+  - animal_digital_twin
+
+# Information about the tools
+tools:
+  - tool-name: adt
+    tool-author: Jan Aarts
+    tool-version: v0.1.0
+    tool-repository: https://github.com/vodor001/link_sources.git
+    tool-license: MIT license
+
+# If your tool require some secrets token to be passed as ENV to the component
+# This won't be traced in MongoDB
+#secrets:
+ # - name: Key of the argument
+#- description: Description of the secret
+
+# If the tool requires some building arguments such as Matlab license
+#build-args:
+ # - name: Key of the argument
+  #- description: Descriptio of the building argument
+  #- secret: Bool
+
+
+# If applicable, data-input list required by the component
+data-inputs:
+  - name: data
+    type: Folder # Folder or filetype
+    path: ./  
+    description: folder with a csv files with data and json files with parameters
+
+# If applicable, data-output list produced by the component
+data-output:
+  - name: data
+    type: Folder # Folder or filetype
+    path: ./
+    description: Preprocessed csv file and parameters .json file
+
+# If applicable, path to schemas to perform semantic validation.
+# Still under development. Ignore.
+#schema-input: PATH_TO_INPUT_SCHEMA
+#schema-output: PATH_TO_OUTPUT_SCHEMA
+
+# If applicable, define devices needed such as GPU.
+#devices:
+ # gpu: Bool
