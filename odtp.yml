@@ -1,22 +1,20 @@
 # This file should contain basic component information for your component.
-component-name: ADT component for linking sources
-component-author: Jascha Grubel, Kristina Vodorezova
-component-version: v0.1.2
-component-repository: https://github.com/vodor001/adt_link_sources.git
+component-name: ADT component for multivariate linear regression
+component-author: Kristina Vodorezova
+component-version: v0.1.0
+component-repository: https://github.com/vodor001/adt_linear_regression.git
 component-license: BSD-3 license
 component-type: ephemeral
-component-description: Loading the data and making preprocessing
+component-description: Applying multivariate linear regression to a dataset
 tags:
-  - energy_expenditure
-  - iot_sensors
-  - animal_digital_twin
+ - machine learning
 
 # Information about the tools
 tools:
-  - tool-name: adt
+  - tool-name: linear_regression
     tool-author: Jan Aarts
     tool-version: v0.1.0
-    tool-repository: https://github.com/vodor001/link_sources.git
+    tool-repository: https://github.com/vodor001/linear_regression.git
     tool-license: MIT license
 
 # If your tool require some secrets token to be passed as ENV to the component
@@ -34,17 +32,17 @@ tools:
 
 # If applicable, data-input list required by the component
 data-inputs:
-  - name: data
-    type: Folder # Folder or filetype
+  - name: train_path, test_path
+    type: .csv, .csv
     path: ./  
-    description: folder with a csv files with data and json files with parameters
+    description: csv files with data and json files with parameters
 
 # If applicable, data-output list produced by the component
-data-output:
-  - name: data
-    type: Folder # Folder or filetype
-    path: ./
-    description: Preprocessed csv file and parameters .json file
+#data-output:
+ # - name: data
+  #  type: Folder # Folder or filetype
+   # path: ./
+    #description: Preprocessed csv file and parameters .json file
 
 # If applicable, path to schemas to perform semantic validation.
 # Still under development. Ignore.
